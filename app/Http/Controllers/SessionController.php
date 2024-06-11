@@ -9,11 +9,16 @@ class SessionController extends Controller
     //
     function index()
     {
-        return view("sesi/index");
+        return view("auth.login");
 
     }
-    function login()
+    function register()
     {
-
+        return view("auth.register");
     }
+    // function login()
+    // {
+    //     return view("EstateAgency.index");
+    // }
+
 }
