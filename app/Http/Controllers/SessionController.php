@@ -10,15 +10,36 @@ class SessionController extends Controller
     function index()
     {
         return view("auth.login");
-
     }
+
     function register()
     {
         return view("auth.register");
     }
-    // function login()
-    // {
-    //     return view("EstateAgency.index");
-    // }
+    function signin()
+    {
+        return view("auth.login");
+    }
+
+    function login()
+    {
+        return view("EstateAgency.index");
+    }
+
+    function home()
+    {
+        return view("EstateAgency.index");
+    }
+
+    function kost()
+    {
+        return view("EstateAgency.kost");
+    }
+
+    function kontrakan()
+    {
+        return view("EstateAgency.kontrakan");
+    }
+
 
 }

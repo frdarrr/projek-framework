@@ -20,4 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[SessionController::class, 'index']);
 Route::get('/register',[SessionController::class, 'register']);
-// Route::get('/client',[SessionController::class, 'login']);
+Route::get('/client',[SessionController::class, 'login']);
+Route::get('/kost',[SessionController::class, 'kost']);
+Route::get('/kontrakan',[SessionController::class, 'kontrakan']);
+Route::get('/home',[SessionController::class, 'login']);
+Route::get('/',[SessionController::class, 'index']);
+

@@ -70,7 +70,7 @@
                             <div class=" d-flex justify-content-center">
                                 <h3>Sign In</h3>
                             </div>
-                            <form>
+                            <form action="/">
                                 <div data-mdb-input-init class="form-outline mb-4">
                                   <label class="form-label" for="form3Example3">Nama</label>
                                   <input type="text" id="form3Example2" class="form-control" >
@@ -93,7 +93,7 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" data-mdb-button-init data-mdb-ripple-init
                                         class="btn btn-primary btn-block mb-4 w-100 ">
-                                        Sign In
+                                        Sign In 
                                     </button>
                                 </div>
 

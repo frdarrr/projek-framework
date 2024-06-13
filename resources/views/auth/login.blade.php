@@ -70,7 +70,7 @@
                             <div class=" d-flex justify-content-center">
                                 <h3>LOGIN</h3>
                             </div>
-                            <form >
+                            <form action="/client">
                                 <!-- Email input -->
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form3Example3">Email address</label>
