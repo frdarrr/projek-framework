@@ -81,7 +81,7 @@
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form3Example4">Password</label>
                                     <input type="password" id="form3Example4" class="form-control" />
-                                </div>
+                                </div> 
 
                                 <!-- Checkbox -->
 

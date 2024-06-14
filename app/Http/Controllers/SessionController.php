@@ -40,6 +40,6 @@ class SessionController extends Controller
     {
         return view("EstateAgency.kontrakan");
     }
-
+   
 
 }

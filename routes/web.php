@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,10 @@ Route::get('/kost',[SessionController::class, 'kost']);
 Route::get('/kontrakan',[SessionController::class, 'kontrakan']);
 Route::get('/home',[SessionController::class, 'login']);
 Route::get('/',[SessionController::class, 'index']);
+
+// Route::get('/admin',[AdminController::class, 'index']);
+// Route::get('/form',[AdminController::class, 'create']);
+
+Route::resource('admin', AdminController::class);
+
 
