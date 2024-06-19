@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PropertiController;
+use App\Models\Properti;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +33,7 @@ Route::get('/',[SessionController::class, 'index']);
 // Route::get('/form',[AdminController::class, 'create']);
 
 Route::resource('admin', AdminController::class);
+Route::resource('properti', PropertiController::class);
+
 
 
