@@ -180,7 +180,8 @@
                                             <td>{{ $admin->no_telp}}</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="#" class="btn btn-outline-warning mr-1">Edit</a>
+                                                <a href="{{{ route('admin.edit', $admin->id) }}}" class="btn btn-outline-warning mr-1">Edit</a>
+                                                {{-- <a href="#" class="btn btn-outline-warning mr-1">Edit</a> --}}
                                                 <form action="{{ route('admin.destroy', $admin->id )}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

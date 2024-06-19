@@ -28,6 +28,21 @@ class AdminController extends Controller
             $admin->save();
             return redirect('admin');
     }
+    public function edit(Admin $admin)
+    {
+        return view("admin-kos.edit", compact('admin'));
+    }
+    public function update(Request $request, Admin $admin){
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'no_telp' => 'required',
+        ]);
+
+        $admin->update($request->all());
+        return redirect('admin');
+    }
     public function destroy(Admin $admin){
         $admin->delete();
         return redirect('admin');
