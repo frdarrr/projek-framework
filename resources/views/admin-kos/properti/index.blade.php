@@ -1,6 +1,7 @@
 @extends('admin-kos.layout')
 @section('content')
  
+
             <!-- Main Content -->
             <div id="content">
 

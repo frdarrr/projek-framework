@@ -81,66 +81,73 @@
                                 <label class="form-label" for="form3Example3">Nama</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control bg-light border-1 small" name="nama" 
-                                        placeholder="Masukkan Nama" aria-label="Search" aria-describedby="basic-addon2">
+                                        placeholder="Masukkan Nama" aria-label="Search" aria-describedby="basic-addon2" value="{{ $properti->nama }}">
                                 </div>
                                 <label class="form-label" for="form3Example3">tipe</label>
                                 <div class="input-group mb-3">
-                                    <select class="form-control bg-light border-1 small" name="tipe" aria-label="Tipe" aria-describedby="basic-addon2">
-                                        <option value="" disabled selected>Pilih Tipe Properti</option>
-                                        <option value="kontrakan">Kontrakan</option>
-                                        <option value="kos">Kos</option>
+                                    <select class="form-control bg-light border-1 small" name="tipe" aria-label="Tipe" aria-describedby="basic-addon2" >
+                                        <option value="" disabled {{ $properti->tipe == "" ? 'selected' : '' }}>Pilih Tipe Properti</option>
+                                        <option value="kontrakan" {{ $properti->tipe == "kontrakan" ? 'selected' : '' }}>Kontrakan</option>
+                                        <option value="kos" {{ $properti->tipe == "kos" ? 'selected' : '' }}>Kos</option>
                                     </select>
                                 </div>
                                 <label class="form-label" for="form3Example3">harga</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control bg-light border-1 small" name="harga"
-                                        placeholder="Masukkan harga" aria-label="Search" aria-describedby="basic-addon2">
+                                        placeholder="Masukkan harga" aria-label="Search" aria-describedby="basic-addon2" value="{{ $properti->harga }}">
                                 </div>
                                 <label class="form-label" for="form3Example3">Alamat</label>
                                 <div class="input-group mb-3">
-                                    <textarea class="form-control bg-light border-1 small" name="alamat" placeholder="Masukkan Alamat" aria-label="Alamat" aria-describedby="basic-addon2"></textarea>
+                                    <textarea class="form-control bg-light border-1 small" name="alamat" placeholder="Masukkan Alamat" aria-label="Alamat" aria-describedby="basic-addon2" >{{ $properti->alamat }}</textarea>
                                 </div>
                                 <label class="form-label" for="form3Example3">wifi</label>
                                 <div class="input-group mb-3">
                                     <select class="form-control bg-light border-1 small" name="wifi" aria-label="Tipe" aria-describedby="basic-addon2">
-                                        <option value="" disabled selected>Pilih Wifi</option>
-                                        <option value="Ya">Ya</option>
-                                        <option value="Tidak">Tidak</option>
+                                        <option value="" disabled {{ $properti->wifi == "" ? 'selected' : '' }}>Pilih Wifi</option>
+                                        <option value="Ya" {{ $properti->wifi == "Ya" ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ $properti->wifi == "Tidak" ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                 </div>
                                 <label class="form-label" for="form3Example3">Jumlah Kamar</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control bg-light border-1 small" name="jumlah_kamar"
-                                        placeholder="jumlah kamar" aria-label="Search" aria-describedby="basic-addon2">
+                                        placeholder="jumlah kamar" aria-label="Search" aria-describedby="basic-addon2" value="{{ $properti->jumlah_kamar }}">
                                 </div>
                                 <label class="form-label" for="form3Example3">Tipe Kamar Mandi</label>
                                 <div class="input-group mb-3">
                                     <select class="form-control bg-light border-1 small" name="tipe_kamarmandi" aria-label="Tipe" aria-describedby="basic-addon2">
-                                        <option value="" disabled selected>Pilih Tipe Kamar Mandi</option>
-                                        <option value="Luar">Luar</option>
-                                        <option value="Dalam">Dalam</option>
+                                        <option value="" disabled {{ $properti->tipe_kamarmandi == "" ? 'selected' : '' }}>Pilih Tipe Kamar Mandi</option>
+                                        <option value="Luar" {{ $properti->tipe_kamarmandi == "Luar" ? 'selected' : '' }}>Luar</option>
+                                        <option value="Dalam" {{ $properti->tipe_kamarmandi == "Dalam" ? 'selected' : '' }}>Dalam</option>
                                     </select>
                                 </div>
                                 <label class="form-label" for="form3Example3">Dapur</label>
                                 <div class="input-group mb-3">
                                     <select class="form-control bg-light border-1 small" name="dapur" aria-label="Tipe" aria-describedby="basic-addon2">
-                                        <option value="" disabled selected>Pilih Dapur</option>
-                                        <option value="Ya">Ya</option>
-                                        <option value="Tidak">Tidak</option>
+                                        <option value="" disabled {{ $properti->dapur == "" ? 'selected' : '' }}>Pilih Dapur</option>
+                                        <option value="Ya" {{ $properti->dapur == "Ya" ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ $properti->dapur == "Tidak" ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                 </div>
                                 <label class="form-label" for="form3Example3">Lain</label>
                                 <div class="input-group mb-3">
-                                    <textarea class="form-control bg-light border-1 small" name="lain" placeholder="Masukkan lain" aria-label="lain" aria-describedby="basic-addon2"></textarea>
-
+                                    <textarea class="form-control bg-light border-1 small" name="lain" placeholder="Masukkan lain" aria-label="lain" aria-describedby="basic-addon2">{{ $properti->lain }}</textarea>
                                 </div>
+                                
                                 <label class="form-label" for="form3Example3">Gambar</label>
                                 <div class="input-group mb-5">
+                                    <div class="mb-3">
+                                        <!-- Menampilkan gambar saat ini jika ada -->
+                                        @if($properti->gambar)
+                                            <img src="{{ asset('images/' . $properti->gambar) }}" alt="Current Image" style="max-width: 100px; height: auto;">
+                                        @endif
+                                    </div>
                                     <input type="file" class="form-control bg-light border-1 small" name="gambar" aria-label="Pilih Gambar" aria-describedby="basic-addon2">
                                 </div>
+                                
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="btn btn-success mr-2 w-50">Save</button>
-                                    <a href="/admin" class="btn btn-danger w-50">Back</a>
+                                    <a href="/properti" class="btn btn-danger w-50">Back</a>
                                 </div>
                             </form>
                         </div>

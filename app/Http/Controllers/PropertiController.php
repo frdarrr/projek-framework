@@ -66,16 +66,36 @@ class PropertiController extends Controller
     {
         return view("admin-kos.properti.edit", compact('properti'));
     }
-    // public function update(Request $request, Admin $admin){
-    //     $request->validate([
-    //         'nama' => 'required',
-    //         'email' => 'required',
-    //         'password' => 'required',
-    //         'no_telp' => 'required',
-    //     ]);
-
-    //     $admin->update($request->all());
-    //     return redirect('admin');
-    // }
+    public function update(Request $request, Properti $properti) {
+        $request->validate([
+            'nama' => 'required',
+            'tipe' => 'required',
+            'harga' => 'required',
+            'alamat' => 'required',
+            'wifi' => 'required',
+            'jumlah_kamar' => 'required',
+            'tipe_kamarmandi' => 'required',
+            'dapur' => 'required',
+            'lain' => 'required',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    
+        $input = $request->all();
+    
+        if ($request->hasFile('gambar')) {
+            $imageName = time().'.'.$request->gambar->extension();  
+            $request->gambar->move(public_path('images'), $imageName);
+            $input['gambar'] = $imageName;
+    
+            // Delete old image if exists
+            if ($properti->gambar && file_exists(public_path('images/'.$properti->gambar))) {
+                unlink(public_path('images/'.$properti->gambar));
+            }
+        }
+    
+        $properti->update($input);
+        return redirect('properti');
+    }
+    
 
 }
